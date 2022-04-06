@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:http/http.dart' as http;
 import 'package:mobile_test/component/global-vars.dart';
@@ -75,7 +74,7 @@ class Service {
       String curr_id,
       String nominal,
       String ket,
-      File photo,
+      // File photo,
       String outlet_id1,
       String outlet_id2,
       String tgl) async {
@@ -93,7 +92,7 @@ class Service {
           "curr_id": curr_id,
           "nominal": nominal,
           "ket": ket,
-          "photo": photo,
+          "photo": "photo",
           "outlet_id1": outlet_id1,
           "outlet_id2": outlet_id2,
           "tgl": tgl
