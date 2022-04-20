@@ -39,30 +39,35 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Warna.primary,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterTop,
+      floatingActionButton: FloatingActionButton(
+          child: GeneralFunct.callSvg("Union7.svg", 24, Warna.primary),
+          onPressed: () {},
+          backgroundColor: Colors.white),
       body: SafeArea(
           child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30.0),
-                      bottomRight: Radius.circular(30.0)),
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                // margin: EdgeInsets.symmetric(v)
-                // alignment: Alignment.center,
-                child: GeneralFunct.callSvg("Union7.svg", 24, Warna.primary),
-              ),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     Container(
+          //       decoration: const BoxDecoration(
+          //         color: Colors.white,
+          //         borderRadius: BorderRadius.only(
+          //             bottomLeft: Radius.circular(30.0),
+          //             bottomRight: Radius.circular(30.0)),
+          //       ),
+          //       padding:
+          //           const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          //       // margin: EdgeInsets.symmetric(v)
+          //       // alignment: Alignment.center,
+          //       child: GeneralFunct.callSvg("Union7.svg", 24, Warna.primary),
+          //     ),
+          //   ],
+          // ),
           Container(
             height: MediaQuery.of(context).size.height * 0.2,
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 64),
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0), color: Colors.white),

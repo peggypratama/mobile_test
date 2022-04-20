@@ -42,12 +42,30 @@ class _LoginPageState extends State<LoginPage> {
         if (data_status['error'] == 0 ||
             data_status['error'] == "0" && data_status['login'] == true ||
             data_status['login'] == "true") {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => MainPage()));
+          _getData();
         } else {
           print("Kesalahan");
         }
       });
+    }).catchError((err) {
+      print(err);
+    });
+  }
+
+  _getData() async {
+    Service().initData().then((value) {
+      var data = jsonDecode(value);
+      var dataa = data['data'];
+
+      setState(() {
+        GlobalVars.DATAOUTLET = dataa['outlet'];
+        GlobalVars.DATAOUTLET_SUB_LIST = dataa['outlet_subs'];
+        GlobalVars.DATATRX_TIPE_LIST = dataa['trx_tipe'];
+        GlobalVars.DATAPAY_TIPE_LIST = dataa['pay_tipe'];
+        GlobalVars.DATACUR_TIPE_LIST = dataa['cur_tipe'];
+      });
+      print(dataa);
+      Navigator.of(context).push(MaterialPageRoute(builder: (_) => MainPage()));
     }).catchError((err) {
       print(err);
     });

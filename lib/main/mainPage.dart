@@ -23,21 +23,7 @@ class _MainPageState extends State<MainPage>
   @override
   void initState() {
     super.initState();
-    Service().initData().then((value) {
-      var data = jsonDecode(value);
-      var dataa = data['data'];
-
-      setState(() {
-        GlobalVars.DATAOUTLET = dataa['outlet'];
-        GlobalVars.DATAOUTLET_SUB_LIST = dataa['outlet_subs'];
-        GlobalVars.DATATRX_TIPE_LIST = dataa['trx_tipe'];
-        GlobalVars.DATAPAY_TIPE_LIST = dataa['pay_tipe'];
-        GlobalVars.DATACUR_TIPE_LIST = dataa['cur_tipe'];
-      });
-      print(dataa);
-    }).catchError((err) {
-      print(err);
-    });
+    
   }
 
   @override
@@ -45,6 +31,7 @@ class _MainPageState extends State<MainPage>
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+  
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,

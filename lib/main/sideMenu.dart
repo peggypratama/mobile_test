@@ -89,7 +89,7 @@ class _SideMenuPageState extends State<SideMenuPage> {
                         ),
                       ],
                       borderRadius: BorderRadius.circular(12),
-                      color: Color(0xfff5f5f5)),
+                      color: Warna.primaty2),
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: DropdownButton(
                     alignment: Alignment.center,
@@ -182,6 +182,26 @@ class _SideMenuPageState extends State<SideMenuPage> {
                             ),
                             borderRadius: BorderRadius.circular(8))),
                   ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white),
+                  child: Container(
+                      child: ListView.builder(
+                          itemCount: 4,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: ((context, index) {
+                            return Container(height: 10,);
+                          }))),
                 ),
               ]),
             ),
